@@ -1,0 +1,89 @@
+import {
+  {{ upperCase name }}_CREATE_ACTION,
+  {{ upperCase name }}_CREATE_SUCCESS_ACTION,
+  {{ upperCase name }}_CREATE_ERROR_ACTION,
+  {{ upperCase name }}_READ__ACTION,
+  {{ upperCase name }}_READ_SUCCESS_ACTION,
+  {{ upperCase name }}_READ_ERROR_ACTION,
+  {{ upperCase name }}_UPDATE_ACTION,
+  {{ upperCase name }}_UPDATE_SUCCESS_ACTION,
+  {{ upperCase name }}_UPDATE_ERROR_ACTION,
+  {{ upperCase name }}_DELETE_ACTION,
+  {{ upperCase name }}_DELETE_SUCCESS_ACTION,
+  {{ upperCase name }}_DELETE_ERROR_ACTION,
+} from 'containers/{{ properCase containerName }}/constants';
+
+
+export function {{ camelCase name }}CreateAction(data) {
+  return {
+    type: {{ upperCase name }}_CREATE_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}CreateSuccessAction(data) {
+  return {
+    type: {{ upperCase name }}_CREATE_SUCCESS_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}CreateErrorAction(data) {
+  return {
+    type: {{ upperCase name }}_CREATE_ERROR_ACTION,
+    data,
+  };
+}
+
+export function {{ camelCase name }}ReadAction(data) {
+  return {
+    type: {{ upperCase name }}_READ_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}ReadSuccessAction(data) {
+  return {
+    type: {{ upperCase name }}_READ_SUCCESS_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}ReadErrorAction(data) {
+  return {
+    type: {{ upperCase name }}_READ_ERROR_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}UpdateAction(data) {
+  return {
+    type: {{ upperCase name }}_UPDATE_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}UpdateSuccessAction(data) {
+  return {
+    type: {{ upperCase name }}_UPDATE_SUCCESS_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}UpdateErrorAction(data) {
+  return {
+    type: {{ upperCase name }}_UPDATE_ERROR_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}DeleteAction(data) {
+  return {
+    type: {{ upperCase name }}_DELETE_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}DeleteSuccessAction(data) {
+  return {
+    type: {{ upperCase name }}_DELETE_SUCCESS_ACTION,
+    data,
+  };
+}
+export function {{ camelCase name }}DeleteErrorAction(data) {
+  return {
+    type: {{ upperCase name }}_DELETE_ERROR_ACTION,
+    data,
+  };
+}

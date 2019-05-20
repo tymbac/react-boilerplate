@@ -1,0 +1,155 @@
+
+import { call, put, select, takeLatest } from 'redux-saga/effects';
+import {
+  {{ upperCase name }}_CREATE_ACTION,
+  {{ upperCase name }}_CREATE_SUCCESS_ACTION,
+  {{ upperCase name }}_CREATE_ERROR_ACTION,
+  {{ upperCase name }}_READ__ACTION,
+  {{ upperCase name }}_READ_SUCCESS_ACTION,
+  {{ upperCase name }}_READ_ERROR_ACTION,
+  {{ upperCase name }}_UPDATE_ACTION,
+  {{ upperCase name }}_UPDATE_SUCCESS_ACTION,
+  {{ upperCase name }}_UPDATE_ERROR_ACTION,
+  {{ upperCase name }}_DELETE_ACTION,
+  {{ upperCase name }}_DELETE_SUCCESS_ACTION,
+  {{ upperCase name }}_DELETE_ERROR_ACTION,
+} from 'containers/{{ properCase containerName }}/constants';
+
+import {
+  {{ camelCase name }}CreateAction        ,
+  {{ camelCase name }}CreateSuccessAction ,
+  {{ camelCase name }}CreateErrorAction   ,
+  {{ camelCase name }}ReadAction          ,
+  {{ camelCase name }}ReadSuccessAction   ,
+  {{ camelCase name }}ReadErrorAction     ,
+  {{ camelCase name }}UpdateAction        ,
+  {{ camelCase name }}UpdateSuccessAction ,
+  {{ camelCase name }}UpdateErrorAction   ,
+  {{ camelCase name }}DeleteAction        ,
+  {{ camelCase name }}DeleteSuccessAction ,
+  {{ camelCase name }}DeleteErrorAction   ,
+} from 'containers/{{ properCase containerName }}/actions';
+
+
+import request from 'utils/request';
+
+//import { makeSelect{{ properCase containerName }} } from 'containers/{{ properCase containerName }}/selectors';
+
+
+/**
+ * Github repos request/response handler
+ */
+
+
+export function* {{ camelCase name }}Create(action) {
+  // Select username from store
+  //const {{ properCase containerName }}= yield select(makeSelect{{ properCase containerName }}());
+  const requestURL = `https://`;
+
+  const options = {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+   //   mode: 'cors', // no-cors, cors, *same-origin
+   //   cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+   //   credentials: 'same-origin', // include, *same-origin, omit
+   //   headers: {
+   //     'Content-Type': 'application/json',
+   //     // 'Content-Type': 'application/x-www-form-urlencoded',
+   //   },
+   //   redirect: 'follow', // manual, *follow, error
+   //   referrer: 'no-referrer', // no-referrer, *client
+   //   body: JSON.stringify(data), // body data type must match "Content-Type" header
+  };
+  try {
+    const data = yield call(request, requestURL, options);
+    yield put({{ camelCase name }}CreateSuccessAction(data));
+  } catch (err) {
+    yield put({{ camelCase name }}CreateErrorAction(err));
+
+  }
+}
+
+
+
+export function* {{ camelCase name }}Read(action) {
+  // Select username from store
+  //const {{ properCase containerName }}= yield select(makeSelect{{ properCase containerName }}());
+  const requestURL = `https://`;
+
+  const options = {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+   //   mode: 'cors', // no-cors, cors, *same-origin
+   //   cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+   //   credentials: 'same-origin', // include, *same-origin, omit
+   //   headers: {
+   //     'Content-Type': 'application/json',
+   //     // 'Content-Type': 'application/x-www-form-urlencoded',
+   //   },
+   //   redirect: 'follow', // manual, *follow, error
+   //   referrer: 'no-referrer', // no-referrer, *client
+   //   body: JSON.stringify(data), // body data type must match "Content-Type" header
+  };
+  try {
+    const data = yield call(request, requestURL, options);
+    yield put({{ camelCase name }}ReadSuccessAction(data));
+  } catch (err) {
+    yield put({{ camelCase name }}ReadErrorAction(err));
+
+  }
+}
+export function* {{ camelCase name }}Update(action) {
+  //const {{ properCase containerName }}= yield select(makeSelect{{ properCase containerName }}());
+  const requestURL = `https://`;
+
+  const options = {
+        method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+   //   mode: 'cors', // no-cors, cors, *same-origin
+   //   cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+   //   credentials: 'same-origin', // include, *same-origin, omit
+   //   headers: {
+   //     'Content-Type': 'application/json',
+   //     // 'Content-Type': 'application/x-www-form-urlencoded',
+   //   },
+   //   redirect: 'follow', // manual, *follow, error
+   //   referrer: 'no-referrer', // no-referrer, *client
+   //   body: JSON.stringify(data), // body data type must match "Content-Type" header
+  };
+  try {
+    const data = yield call(request, requestURL, options);
+    yield put({{ camelCase name }}UpdateSuccessAction(data));
+  } catch (err) {
+    yield put({{ camelCase name }}UpdateErrorAction(err));
+
+  }
+}
+export function* {{ camelCase name }}Delete(action) {
+  //const {{ properCase containerName }}= yield select(makeSelect{{ properCase containerName }}());
+  const requestURL = `https://`;
+  const options = {
+        method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+   //   mode: 'cors', // no-cors, cors, *same-origin
+   //   cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+   //   credentials: 'same-origin', // include, *same-origin, omit
+   //   headers: {
+   //     'Content-Type': 'application/json',
+   //     // 'Content-Type': 'application/x-www-form-urlencoded',
+   //   },
+   //   redirect: 'follow', // manual, *follow, error
+   //   referrer: 'no-referrer', // no-referrer, *client
+   //   body: JSON.stringify(data), // body data type must match "Content-Type" header
+  };
+  try {
+    const data = yield call(request, requestURL, options);
+    yield put({{ camelCase name }}DeleteSuccessAction(data));
+  } catch (err) {
+    yield put({{ camelCase name }}DeleteErrorAction(err));
+
+  }
+}
+
+export default function* {{ camelCase name }}Saga() {
+  // See example in containers/HomePage/saga.js
+  yield takeLatest({{ upperCase name }}_CREATE_ACTION, {{ camelCase name }}Create);
+  yield takeLatest({{ upperCase name }}_READ_ACTION, {{ camelCase name }}Read);
+  yield takeLatest({{ upperCase name }}_UPDATE_ACTION, {{ camelCase name }}Update);
+  yield takeLatest({{ upperCase name }}_DELETE_ACTION, {{ camelCase name }}Delete);
+}
